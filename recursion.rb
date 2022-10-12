@@ -9,13 +9,11 @@ end
 
 p fibs(8)
 
-def fibs_rec(num, seq = [])
-  if num <= 2
-    (0...num).each { |i| seq << i }
-    return seq
-  end
+def fibs_rec(num)
+  return [0, 1] if num <= 2
+
   seq = fibs_rec(num - 1)
-  seq << seq[-1] + seq[-2]
+  seq << seq[-2] + seq[-1]
 end
 
 p fibs_rec(8)
